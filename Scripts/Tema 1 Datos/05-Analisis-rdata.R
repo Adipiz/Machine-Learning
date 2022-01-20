@@ -22,3 +22,37 @@ save(pedidos, clientes_vip ,  file = "Data/pedidos.Rdata")
 
 # remover data de la memoria de r
 remove(pedidos)
+
+
+# Cargando ficheros Rdata y rds -------------------------------------------
+
+
+# Carga Rdata file 
+# Nota que está la tabla de pedidos y un vector
+load("Data/pedidos.Rdata")
+
+
+# Carga RDS
+orders <- readRDS("Data/pedidos.rds")
+
+data(iris)
+data(cars)
+
+# Guardar todos los objetos de una sesión ---------------------------------
+
+save.image(file = "Data/alldata.Rdata")
+
+
+primes <-c(2,3,5,7,11,13)
+pow2 <-c(2,4,8,16,32,64,128)
+
+save(list = c("primes","pow2"), file = "Data/prime_and_pow2.Rdata")
+
+# Qué pasa si existin dichas variables en el ambiente y no quiero que se sobreescriba
+
+attach("Data/prime_and_pow2.Rdata")
+
+# LIsta de Datasets en r
+data()
+
+load(cars)
