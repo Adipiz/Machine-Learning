@@ -21,3 +21,22 @@ students$Income.cat2 <- cut(students$Income, breaks = bp)
 # Por defecto 
 students$Income.cat3 <- cut(students$Income, breaks = 4, 
                             labels = c("Level 1","Level 2", "Level 3", "Level 4"))
+
+
+
+# Variables ficticias -----------------------------------------------------
+ # Variables numéricas que representan categorías
+library(dummies)
+students <- read.csv("Data/data-conversion.csv")
+
+ # en este df hay dos variables categóricas
+students.dummy <- dummy.data.frame(students, sep = ".")
+
+ # dummy para una variable
+dummy(students$State, sep = "." )
+
+
+ # dummy para una selección de variables
+dummy.data.frame(students, names = c("Gender"), sep = ".")
+
+
