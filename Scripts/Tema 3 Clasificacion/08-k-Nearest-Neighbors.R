@@ -39,3 +39,15 @@ errmat1
 pred2 <- class::knn(train[,4:5], test[,4:5], train[,3], k = 1)
 errmat2 <- table(test$Result, pred2, dnn = c("Actual", "Predichos"))
 errmat2
+
+
+# Creando una función con K vecinos más cercanos çoptimos --------------------------
+
+
+
+
+
+
+
+
+
