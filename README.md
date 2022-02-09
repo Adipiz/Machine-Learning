@@ -4,7 +4,7 @@ para empresas de videojuegos con R y Python, en Game Design para videojuegos de 
 de videojuegos utilizando los motores Unreal Engine y Unity tanto para PC como para móvil desde el año 2011.
 
 En este curso contiene scripts que voy estudiando. La primera parte del curso está enfocada en la carga de diferentes clases de ficheros. Se sigue de un análisis exploratorio
-con técnicas sencillas y Clasificar objetos es tarea fundamental del analista de datos. La tercera parte se ven técnicas como Navy Bayes, K Nearest Neighbors, Support Vector Machines o 
+con técnicas sencillas y una parte de clasificación. La tercera parte se ven técnicas como Navy Bayes, K Nearest Neighbors, Support Vector Machines o 
 Redes Neuronales entre otros. 
 
 Este es el desarrollo del curso, por lo que iré sumando scripts en la medida de mis avances. 
