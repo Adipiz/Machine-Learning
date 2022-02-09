@@ -11,3 +11,6 @@ Este es el desarrollo del curso, por lo que iré sumando scripts en la medida de
 
 Hasta ahora, lo más difícil ha sido obtener los permisos de desarrollador para el uso de la API de twitter. En las últimas clases de clasificación vemos esto. AUN NO CONSIGO ESOS 
 PERMISOS. Demoran un poco.
+
+
+Si quieres saber un poco más del curso acá te dejo el [link](https://github.com/joanby/r-course/blob/master/README.md)
