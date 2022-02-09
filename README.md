@@ -1,6 +1,5 @@
-# Machine-Learning
-ML for R
-# Esta recopilación proviene del curso de Machine Learning en Rstudio elaborado por Juan Gabriel Gomila, Licenciado en matemáticas, especializado en el análisis de datos
+### Machine-Learning ML for R
+Esta recopilación proviene del curso de Machine Learning en Rstudio elaborado por Juan Gabriel Gomila, Licenciado en matemáticas, especializado en el análisis de datos
 para empresas de videojuegos con R y Python, en Game Design para videojuegos de social casino, en el desarrollo de aplicaciones móviles para iOS y para Android y desarrollador 
 de videojuegos utilizando los motores Unreal Engine y Unity tanto para PC como para móvil desde el año 2011.
 
