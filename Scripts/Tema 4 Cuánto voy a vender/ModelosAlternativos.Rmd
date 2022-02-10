@@ -1,0 +1,23 @@
+---
+title: "Modelos alternativos al lineal"
+author: "Alonso Pizarro Lagunas"
+date: "10/2/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Alternative models
+
+|Formula expression           |             Corresponding regression Model                               |       
+|:----------------------------|:------------------------------------------------------------------------:|
+|$Y\sim P$                    |$\hat{Y} \sim \beta_0 + \beta_1P$                                         |                                  
+|$Y\sim P + Q$                |$\hat{Y} \sim \beta_0 + \beta_1P + \beta_2Q$                              |                                  
+|$Y\sim-1 + P$                |$\hat{Y} \sim \beta_1P$                                                   |                                  
+|$Y\sim P:Q$                  |$\hat{Y} \sim \beta_0 + \beta_1PQ$                                        |                                    
+|$Y\sim P*Q | Y\sim P+Q+P:Q$  |$\hat{Y} \sim \beta_0 +\beta_1P + \beta_2Q + \beta_3PQ$                   |                                    
+|$Y\sim P + I(\log(Q))$       |$\hat{Y} \sim \beta_0 +\beta_1P + \beta_2 \log(Q)$                        |                                   
+|$Y\sim (P+Q+R)^2$            |$\hat{Y}\sim\beta_0+\beta_1P+\beta_2Q+\beta_3R+\beta_4PQ+\beta_5QR+\beta_6PR$|                                
+
