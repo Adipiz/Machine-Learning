@@ -85,9 +85,69 @@ plot(errores, type = 'o', xlab = 'k vecinos', ylab = "RMSE" )
 
 
 # Regresión con conjunto de testing
-reg.test <- knn.reg(tr[,7:13], test[,7:13], tr$expense, k=2,
+reg.test <- knn.reg(tr[,7:12], test[,7:12], tr$expense, k=3,
                 algorithm = "brute")
 
 # rmse con cuatro vecinos
 rmse.test <- sqrt(mean((reg.test$pred - test$expense)^2))
 rmse.test
+
+
+df <- data.frame(actual = test$expense, pred = reg.test$pred)
+
+
+# K nearest Neighbors sólo con dos particiones ---------------------------------------
+
+t.id <- createDataPartition(edu$expense, p = 0.7, list = F)
+
+# Conjunto de entrenamiento
+tr <- edu[t.id,]
+
+# Conjunto de validación
+val <- edu[-t.id,]
+
+reg <- knn.reg(tr[,7:13], test = NULL, y = tr$expense, 
+               k = 3, algorithm = "brute")
+
+
+rmse.reg <- sqrt(mean(reg$residuals^2))
+rmse.reg
+
+
+# Creando una función para encontrar la k de reegresión que nos de el mejor rmse
+
+rdacb.knn.reg <- function(tr_predictor, val_predictors,
+                          tr_target, val_target, k){
+  
+  res <- knn.reg(tr_predictor, val_predictors,
+                 tr_target, k, algorithm = 'brute')
+  rmserror <- sqrt(mean((val_target - res$pred)^2))
+  
+  cat(paste("RMSE con k = ", toString(k), ": ", rmserror, "\n", sep = ""))
+  rmserror
+}
+
+# aplicando nuestra función
+rdacb.knn.reg(tr[, 7:13], val[,7:13],
+              tr$expense, val$expense, 3)
+
+# Aplicando KNN con un ciclo for para la obtención de K vecinos de elección
+rdacb.knn.reg.multi <- function(tr_predictor, val_predictors,
+                                tr_target, val_target, start_k, end_k){
+  rms_errors <- vector() 
+    for(k in start_k:end_k){
+    rms_error <- rdacb.knn.reg(tr_predictor, val_predictors,
+                                tr_target, val_target, k)
+      rms_errors <- c(rms_errors, rms_error)
+    }
+  
+  plot(rms_errors, type = 'o', xlab = "k", ylab = "RMSE")
+  
+}
+ 
+#Prueba de nueva función 
+rdacb.knn.reg.multi(tr[,7:12], val[,7:12], tr$expense, val$expense, 1, 10)
+
+ 
+
+

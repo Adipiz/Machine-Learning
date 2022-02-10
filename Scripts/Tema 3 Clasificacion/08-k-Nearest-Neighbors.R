@@ -90,3 +90,12 @@ pred5 <- knn(train[,4:5],   # Conjunto de entrenamiento
 
 pred5
 
+
+
+
+
+
+
+
+
+
