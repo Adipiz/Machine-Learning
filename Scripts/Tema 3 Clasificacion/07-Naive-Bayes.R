@@ -25,7 +25,6 @@ pred <- predict(mod, ep[-t.ids,])
 
 # matriz de confusión
 tab <- table(ep[-t.ids, "Purchase"], pred, dnn = c("Actual", "Predicha"))
-
 confusionMatrix(tab)
 
 

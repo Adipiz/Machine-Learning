@@ -45,8 +45,39 @@ par(mfrow = c(2,2))
 plot(mod)
 
 
+# Cambiando el valor de refrencia de la variable categórica
+
+auto <- within(auto, cylinders <- relevel(cylinders, ref = "4c"))
+
+# Modelo con nueva categoría
+mod <- lm(mpg ~., data = auto[t.id, -c(1,8,9)])
+mod
+
+
+pred <-predict(mod, auto[-t.id, -c(1,8,9)])
+
+sqrt(mean((pred-auto[-t.id,"mpg"])^2))
+plot(mod)
+
+# Analizando las gráficas podemos notar que los residuos se 
+# distribuyen aleatoriamente alrededor del cero, no mostrando 
+# ningún patrón o  tendencia. Estos residuos se distribuyen bastante 
+# normal con excepción de algunos datos específicos. 
+# Además, al parecer la varianza es constante, esto es, los 
+# errores deben ser homocedasticos y 
+# hay pocos valores pesen en el modelo.
 
 
 
+
+
+
+# Librería MASS y la función step -----------------------------------------
+ # Selección de variables importantes en el modelo
+
+library(MASS)
+
+# Elimando variables por el AIC
+step.mod <- stepAIC(mod, direction = "backward")
 
 
