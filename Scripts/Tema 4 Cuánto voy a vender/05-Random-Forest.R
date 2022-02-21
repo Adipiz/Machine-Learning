@@ -44,8 +44,6 @@ plot(bh[-t.id, "MEDV"], predict(mod,newdata = bh[-t.id,]),
 abline(0,1)
 
 
-
-
 #mtry = m/3 cuántos predictores vamos a tomar en cada división
 # m  = # de predictores
 #nodesize = 5, elementos mínimos de la muestra
