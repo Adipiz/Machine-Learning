@@ -1,0 +1,21 @@
+
+# Distribuciones ----------------------------------------------------------
+
+library(ggplot2)
+
+
+geiser <- read.csv("Data/geiser.csv")
+
+plot <- ggplot(geiser, aes(x = waiting)) 
+plot + geom_histogram(binwidth = 5, fill  ="white", color ='black')
+
+ggplot(geiser, aes(x = waiting, y = ..density..)) + 
+  geom_histogram(fill = "cornsilk", color = "grey60", size=0.2) + 
+  geom_density() + xlim(35,105)
+
+
+
+
+ggplot(geiser, aes(x = eruptions, y = ..density..)) + 
+  geom_histogram(fill = "cornsilk", color = "grey60", size=0.2) + 
+  geom_density() + xlim(0,7)
