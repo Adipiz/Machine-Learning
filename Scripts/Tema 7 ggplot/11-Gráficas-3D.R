@@ -66,9 +66,3 @@ png(file="nombre.pdf", width = 3000, height = 3000) # Pesa más pero la calidad 
 # plot 1
 # plot 2
 dev.off()
-
-
-
-
-
-
